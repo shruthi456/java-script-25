@@ -64,7 +64,7 @@ addBtn.addEventListener('click', function() {
 
 
         const newRow = expensesTableBody.insertRow();
-        const ncategoryCell = newRow.insertCell();
+        const categoryCell = newRow.insertCell();
         const amountCell = newRow.insertCell();
         const dateCell = newRow.insertCell();
         const deleteCell = newRow.insertCell();
