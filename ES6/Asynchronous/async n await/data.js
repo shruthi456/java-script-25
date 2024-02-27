@@ -6,7 +6,32 @@ let createEmployee=(emp)=>{
     return new Promise((resolve,reject)=>{
 
         setTimeout(()=>{
-            let dbflag=
-        })
+            let dbflag=true
+            if(dbflag){
+                resolve('Data Inserted')
+                employees.push(emp)
+            }
+            else{
+                reject("Failed")
+            }
+        },4000)
     })
 }
+let  getEmployees=()=>{
+    setTimeout(()=>{
+        let rows=""
+        for(employee of employees){
+            rows = rows +`<tr>
+            <td>${employee.id}</td>
+            <td>${employee.name}</td>
+            <td>${employee.salary}</td>
+            </tr>`
+        }
+        document.getElementById('abc').innerHTML = rows
+    },2000)
+}
+let exec = async()=>{
+    await createEmployee({id:103,name:"Sonia",salary:65000})
+getEmployees()
+}
+exec()
